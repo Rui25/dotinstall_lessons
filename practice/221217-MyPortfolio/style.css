@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  /* bodyにデフォルトでmarginが設定されちゃっている！ */
+}
+
+img {
+  /* 全てのimgに対して設定ができる！ */
+  vertical-align: bottom;
+}
+
+header {
+  background: #efefef;
+  padding: 20px;
+}
+
+/* h1やpもデフォルトで余白がついてる */
+header h1,p {
+  margin: 0;
+}
+
+header h1 {
+  /* font-decorationではなくfont-weightで太字を普通にする */
+  font-weight: normal;
+  font-size: 24px;
+}
+
+header .container {
+  width: 400px;
+  /* marginで中央寄せにする */
+  margin: 0 auto;
+  /* display flexで横並びにする際は、その要素をdivで囲む必要がある。 */
+  display: flex;
+  /* 高さ的な中央揃えはこれ！ */
+  align-items: center;
+}
+
+header .container div + div {
+  margin-left: 32px;
+}
+
+header ul {
+  /* 以下も覚えていなかった */
+  list-style: none;
+  display: flex;
+  /* デフォルトでmarginとpaddingがある*/
+  margin: 0;
+  padding: 0;
+}
+
+header div .icon {
+  border-radius: 50%;
+}
+
+/* ここ難しいね！！ margin次第で物の場所を設定できる！というイメージを持ってたらいいかな。*/
+header ul li + li {
+  margin-left: 8px;
+}
+
+main .container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+main h1 {
+  margin: 60px;
+  /* text-decoration: none;ではない */
+  font-weight: normal;
+  font-size: 24px;
+  /* 以下でテキストの中央揃えができる */
+  text-align: center;
+}
+
+main h2 {
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+main p {
+  margin-bottom: 70px;
+}
+
+footer {
+  margin: 40px ;
+}
+
+footer p {
+  color: silver;
+  text-align: center;
+}

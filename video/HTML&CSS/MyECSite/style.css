@@ -1,0 +1,196 @@
+/* common */
+body {
+  /* bodyにmargin0をつけても上端が消えないのはh1のデフォルトによるもの */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+  /* font-styleとfont-weight間違えないように */
+  font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  /* 上下で上に揃えるか中央か下に揃えるかを設定するやつ、上下を揃える時の単数版*/
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  /* ページ全体に左右の余白をつける。bodyにつけてもいいが、おそらく後でfooterを作る時左右の余白要らなくなるからcontainerクラスを作ったのだと思われる */
+  margin: 0 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /* hoverを設定した後はこの箇所にかける時間を記載する */
+  transition: .3s;
+}
+
+a:hover {
+  opacity: .5;
+}
+
+/* header */
+
+header {
+  padding: 8px 0;
+}
+
+header .container {
+  display: flex;
+  /* フレックスアイテムの位置を変える */
+  justify-content: space-between;
+  /* 上下中央揃え(flexを用いるとき)、上下を揃えるときの複数版 */
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+}
+
+header li a {
+  /* https://webst8.com/blog/css-flex/ */
+  display: flex;
+  /* display flexはあくまでアイテムとして区別することの定義。その上で方向を変えるときに使うのがflex-direction、そして感覚を設定するのがjustify-contents */
+  flex-direction: column;
+  font-size: 12px;
+  text-align: center;
+}
+
+header li a i {
+  font-size: 18px;
+}
+
+header li + li {
+  margin-left: 8px;
+}
+
+header form {
+  display: none;
+}
+
+header input,
+header button {
+  all: unset;
+}
+
+header input {
+  border-bottom: 1px solid #aaa;
+  padding: 4px;
+  width: 300px;
+}
+
+header button {
+  cursor: pointer;
+}
+
+/* hero */
+.hero img {
+  width: 100%;
+  height: 400px;
+  /* 縦横比を保ちつつ大きく見せる方法 */
+  object-fit: cover;
+}
+
+/* products */
+.products {
+  padding: 80px 0;
+}
+
+.products ul {
+  margin-top: 32px;
+  display: flex;
+  /* 折り返し表示便利ね */
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.products li {
+  width: calc((100% - 16px) / 2);
+}
+
+.products li img {
+  width: 100%;
+}
+
+.product li h2 {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.products .more {
+  /* blockに指定することで、広さや高さを領域ごと設定することができる */
+  display: block;
+  width: 70%;
+  line-height: 48px;
+  border: 2px solid #333;
+  /* 中央揃え */
+  text-align: center;
+  /* 上・左右・下 */
+  margin: 32px auto 0;
+}
+
+/* footer */
+footer {
+  background: #4c4948;
+  padding: 16px 0;
+  color: #eee;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer small {
+  font-size: 16px;
+}
+
+footer li {
+  font-size: 24px;
+}
+
+footer ul {
+  /* liではなくulにつける。 */
+  display: flex;
+}
+
+footer li + li {
+  margin-left: 8px;
+}
+
+/* medium screeen */
+@media (min-width: 600px) {
+
+  .products li {
+    width: calc((100% - 32px) / 3);
+  }
+}
+/* large screeen */
+@media (min-width: 800px) {
+
+  .container {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    /* 以下だいじ！ */
+    max-width: 800px;
+  }
+
+  header form {
+    display: block;
+  }
+}

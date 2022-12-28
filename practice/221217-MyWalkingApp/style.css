@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+}
+
+.container {
+  width: calc(100% - 32px);
+  /* 範囲を中央寄せにする */
+  margin: 0 auto;
+}
+
+header {
+  background: #eee;
+  padding: 22px 15px;
+}
+
+header .container {
+  /* 横並びにする */
+  display: flex;
+  /* justify-contentで左寄せ、右よせ、中央寄せ、両端揃え等の設定ができる！ */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn{
+  text-decoration: none;
+  background-color: #329e00;
+  /* ボタンを右に配置する方法がわからない */
+
+  /* displayプロパティにより要素の表示のされ方や高さ・幅の設定が変わってきます。 */
+  display: block;
+  width: 160px;
+  color: #fff;
+  /* 中央揃え */
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px;
+  font-weight: bold;
+}
+
+main {
+  
+}
+
+.introduce {
+  display: flex;
+  background: #99e6ff;
+  /* urlになるところ注意 */
+  background-image: url(img/bg.png);
+  background-repeat: repeat-x;
+  /* 下側に置く方法 */
+  background-position: bottom;
+  padding-top: 64px;
+}
+
+.apptext {
+  width: 50%;
+}
+
+h1,
+h2 {
+  font-style: none;
+  /* font-weight忘れがち */
+  font-weight: normal;
+}
+
+h1 {
+  color: blue;
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+  /* 行間を開けるやつ */
+  line-height: 1.6;
+}
+
+.introduce p {
+  text-align: center;
+}
+
+main .btn {
+  /* 中央寄せするためにmargin autoを使う */
+  margin: 64px auto 0;
+}
+
+.character {
+  padding: 64px 32px;
+}
+
+.character img {
+  width: 100%;
+}
+
